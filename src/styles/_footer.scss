@@ -1,0 +1,141 @@
+@use "variables" as colors;
+
+footer {
+  background-color: #393230;
+
+  .grid {
+    padding: 60px 60px;
+    color: rgb(143, 143, 143);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    max-width: calc(1260px - 120px);
+    margin-inline: auto;
+    justify-items: center;
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .flex {
+        display: flex;
+        gap: 1rem;
+
+        & svg {
+          min-width: 40px;
+        }
+      }
+
+      img {
+        width: clamp(100px, 100%, 280px);
+      }
+
+      .title {
+        font-size: 1.3rem;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .para {
+        line-height: 1.8;
+      }
+
+      a {
+        color: rgb(143, 143, 143);
+        font-size: 1rem;
+        transition: color 0.5s;
+        position: relative;
+        width: max-content;
+
+        &.effect::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background-color: colors.$theme-color;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: width .2s;
+          }
+
+          &.effect:hover::after{
+              color: colors.$theme-color;
+                width: 100%;
+          }
+          
+          &:hover{
+              color: colors.$theme-color;
+          }
+      }
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+
+      & svg {
+        font-size: 1.52rem;
+        transition: color 0.5s;
+
+        &:hover {
+          color: colors.$theme-color;
+        }
+      }
+    }
+
+    @media (max-width: 990px) {
+      & {
+        grid-template-columns: repeat(2, 1fr);
+
+        .row:not(:nth-child(2)) {
+            justify-self: flex-start;
+        }
+
+      }
+    }
+    @media (max-width: 765px) {
+      & {
+        grid-template-columns:  1fr;
+        padding: 1rem .5rem;
+
+        .row {
+            justify-self: flex-start;
+        }
+
+      }
+    }
+  }
+}
+
+.copyrights {
+    background-color: #2e2726;
+    color: white;
+    padding: 30px 20px;
+
+    .con {
+    max-width: calc(1260px - 120px);
+
+        display: flex;
+        margin-inline: auto;
+        justify-content: space-between;
+
+        .payments {
+            display: flex;
+            gap: 1rem;
+
+            img {
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 765px) {
+            & {
+              flex-direction: column;
+              align-items: center;
+              gap: 2rem;
+            }
+          }
+    }
+}

@@ -1,0 +1,120 @@
+@use "variables" as colors;
+
+.related {
+  max-width: calc(1260px - 120px);
+  margin-inline: auto;
+
+  h2 {
+    padding: 1rem 30px;
+  }
+
+  hr {
+    margin: 1rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin: 3rem 2rem 4rem;
+    justify-items: center;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+
+      .data {
+        position: relative;
+        overflow: hidden;
+        img {
+          margin-bottom: 1rem;
+          max-width: 240px;
+          width: 100%;
+        }
+
+        .toshow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateX(-100%);
+          opacity: 0;
+          transition: transform 0.3s, opacity 0.5s;
+        }
+
+        &:hover .toshow {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .name {
+        max-width: 12ch;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: rgb(94, 94, 94);
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      & {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 760px) {
+      & {
+        grid-template-columns: repeat(2, 1fr);
+
+        .card {
+          .name {
+            max-width: 10ch;
+          }
+        }
+      }
+    }
+  }
+
+  .subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    [type="email"] {
+      padding: 0.51rem;
+      border: none;
+      background-color: #f5f2f2;
+      width: 210px;
+      height: 50px;
+      outline: none;
+    }
+
+    button {
+      background-color: colors.$theme-color;
+      border: 2px solid colors.$theme-color;
+      height: 50px;
+      padding: 1rem;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: box-shadow 0.52s, color 0.3s;
+
+      &:hover {
+        box-shadow: inset -6rem 6rem 0 rgb(255, 255, 255);
+        color: #000;
+      }
+    }
+    @media (max-width: 440px) {
+      & {
+        flex-direction: column;
+
+        [type="email"] {
+          width: 90%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
