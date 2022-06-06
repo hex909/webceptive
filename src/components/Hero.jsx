@@ -247,10 +247,10 @@ function Hero() {
             </div>
 
             <div className='btn-con'>
-              <button className='btn toCart'>
+              <button className='btn toCart btn-theme'>
                 <BsCartFill className='animation' /> ADD TO CART
               </button>
-              <button className='btn wishlist'>
+              <button className='btn wishlist btn-theme'>
                 <BsFillSaveFill /> WISHLIST
               </button>
             </div>
