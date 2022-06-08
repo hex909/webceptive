@@ -168,7 +168,6 @@ function Hero() {
                 <div
                   className='icon-con'
                   onClick={() => {
-                    console.log("increase");
                     setState((s) => {
                       return { ...s, count: s.count + 1 };
                     });
