@@ -5,11 +5,10 @@ function Product() {
   const [tabSwitch, SetTabSwitch] = useState("details");
 
   return (
-    <section className='tabs' id='tab'>
+    <section className='tabs'>
       <ul className='flex'>
         <li>
           <a
-            href='#tab'
             className={` ${tabSwitch === "details" && "is-active"}`}
             data-tabs='details'
             onClick={(e) => SetTabSwitch(e.target.dataset.tabs)}>
@@ -18,7 +17,6 @@ function Product() {
         </li>
         <li>
           <a
-            href='#tab'
             className={` ${tabSwitch === "specification" && "is-active"}`}
             data-tabs='specification'
             onClick={(e) => SetTabSwitch(e.target.dataset.tabs)}>
@@ -27,7 +25,6 @@ function Product() {
         </li>
         <li>
           <a
-            href='#tab'
             className={`${tabSwitch === "video" && "is-active"}`}
             data-tabs='video'
             onClick={(e) => SetTabSwitch(e.target.dataset.tabs)}>
@@ -36,7 +33,6 @@ function Product() {
         </li>
         <li>
           <a
-            href='#tab'
             className={`${tabSwitch === "review" && "is-active"}`}
             data-tabs='review'
             onClick={(e) => SetTabSwitch(e.target.dataset.tabs)}>
