@@ -149,7 +149,7 @@ function Hero() {
                   onClick={() =>
                     setState((s) => {
                       if (s.count !== 1) {
-                        return { ...s, count: s.count-- };
+                        return { ...s, count: s.count - 1 };
                       } else {
                         return s;
                       }
@@ -163,23 +163,13 @@ function Hero() {
                     type='text'
                     placeholder='1'
                     value={state.count}
-                    disabled
-                    onChange={(e) => {
-                      let value = parseInt(e.target.value);
-                      if (isNaN(value)) return;
-
-                      if (value < 1) return;
-
-                      setState((s) => {
-                        return { ...s, count: value };
-                      });
-                    }}></input>
+                    disabled></input>
                 </div>
                 <div
                   className='icon-con'
                   onClick={() =>
                     setState((s) => {
-                      return { ...s, count: s.count++ };
+                      return { ...s, count: s.count + 1 };
                     })
                   }>
                   <IoIosArrowForward />
