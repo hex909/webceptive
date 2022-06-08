@@ -167,11 +167,12 @@ function Hero() {
                 </div>
                 <div
                   className='icon-con'
-                  onClick={() =>
+                  onClick={() => {
+                    console.log("increase");
                     setState((s) => {
                       return { ...s, count: s.count + 1 };
-                    })
-                  }>
+                    });
+                  }}>
                   <IoIosArrowForward />
                 </div>
               </div>
