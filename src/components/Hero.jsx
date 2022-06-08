@@ -163,6 +163,7 @@ function Hero() {
                     type='text'
                     placeholder='1'
                     value={state.count}
+                    disabled
                     onChange={(e) => {
                       let value = parseInt(e.target.value);
                       if (isNaN(value)) return;
